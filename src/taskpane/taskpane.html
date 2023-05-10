@@ -20,6 +20,12 @@
 
     <!-- Template styles -->
     <link href="taskpane.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
   </head>
 
   <body class="ms-font-m ms-welcome ms-Fabric">
@@ -40,24 +46,47 @@
     </section>
     <main id="app-body" class="ms-welcome__main" style="display: none">
       <h2 class="ms-font-xl">Power point solution</h2>
-      <div>
-        <label for="slide-num">Slide number : </label>
-        <input id="slide-num" type="text" />
+
+      <div class="container mt-3">
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Slide number :</span>
+          <input type="number" min="1" class="form-control" id="slide-num" />
+        </div>
+
+        <div class="input-group input-group-sm my-3">
+          <span class="input-group-text">Navigate on</span>
+          <input
+            type="number"
+            id="minutes-navigate-on"
+            min="0"
+            aria-label="Minutes"
+            placeholder="Minutes"
+            class="form-control"
+          />
+          <input
+            type="number"
+            id="seconds-navigate-on"
+            aria-label="Seconds"
+            placeholder="Seconds"
+            class="form-control"
+          />
+        </div>
+
+        <div class="input-group input-group-sm">
+          <span class="input-group-text">Count down</span>
+          <input type="number" id="minutes" min="0" aria-label="Minutes" placeholder="Minutes" class="form-control" />
+          <input type="number" id="seconds" aria-label="Seconds" placeholder="Seconds" class="form-control" />
+          <button class="btn btn-sm btn-outline-primary" id="startCountdown">Start</button>
+        </div>
+
+        <p class="m-3" id="countdown"></p>
       </div>
 
-      <br />
-
-      <div>
-        <label for="minutes">Minutes:</label>
-        <input type="number" id="minutes" min="0" />
-        <label for="seconds">Seconds:</label>
-        <input type="number" id="seconds" min="0" max="59" />
-        <button id="startCountdown">Start Countdown</button>
-        <p id="countdown"></p>
-      </div>
-      <div role="button" id="gotoslide" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
-        <span class="ms-Button-label">go to slide</span>
-      </div>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"
+      ></script>
     </main>
   </body>
 </html>
